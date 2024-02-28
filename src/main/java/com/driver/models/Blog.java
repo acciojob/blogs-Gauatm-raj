@@ -1,8 +1,8 @@
 package com.driver.models;
 
+import com.driver.models.Image;
+import com.driver.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +27,11 @@ public class Blog {
     private List<Image> image = new ArrayList<>();
 
 
-    public Blog(int blogId, String title, String content, User user, List<Image> image) {
+    public Blog(int blogId, String title, String content) {
         this.blogId = blogId;
         this.title = title;
         this.content = content;
-        this.user = user;
-        this.image = image;
+
     }
 
     public Blog() {
