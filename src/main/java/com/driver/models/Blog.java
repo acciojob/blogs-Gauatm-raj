@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+
 public class Blog {
 
     @Id
@@ -21,9 +22,8 @@ public class Blog {
     @JsonIgnore
     private User user;
 
-    @JoinColumn
+
     @OneToMany(mappedBy = "blog" , cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Image> image = new ArrayList<>();
 
 

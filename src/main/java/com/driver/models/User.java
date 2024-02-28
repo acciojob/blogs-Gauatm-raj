@@ -15,9 +15,8 @@ public class User {
     private String username;
     private String password;
 
-    @JoinColumn
+
     @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Blog> blog = new ArrayList<>();
 
     public User(String username, String password) {

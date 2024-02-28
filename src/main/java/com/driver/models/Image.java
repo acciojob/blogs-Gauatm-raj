@@ -15,9 +15,8 @@ public class Image {
 
     private String dimensions;
 
-    @JoinColumn
+
     @ManyToOne
-    @JsonIgnore
     private Blog blog;
 
     public Image() {
