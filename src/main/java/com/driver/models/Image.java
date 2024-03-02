@@ -10,7 +10,7 @@ public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int imageId;
+    private int id;
     private String description;
 
     private String dimensions;
@@ -28,12 +28,12 @@ public class Image {
 
     }
 
-    public int getImageId() {
-        return imageId;
+    public int getId() {
+        return id;
     }
 
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescription() {

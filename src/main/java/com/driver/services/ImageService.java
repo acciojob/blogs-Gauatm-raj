@@ -23,7 +23,7 @@ public class ImageService {
         if(blog==null)
          return null;
 
-        blog.getImage().add(image);
+        blog.getImageList().add(image);
         image.setBlog(blog);
         image=imageRepository2.save(image);
 

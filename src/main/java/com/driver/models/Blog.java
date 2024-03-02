@@ -13,11 +13,11 @@ public class Blog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int blogId;
+    private int id;
     private String title;
     private String content;
 
-    private Date pub;
+    private Date pubDate;
 
     @JoinColumn
     @ManyToOne
@@ -26,7 +26,7 @@ public class Blog {
 
 
     @OneToMany(mappedBy = "blog" , cascade = CascadeType.ALL)
-    private List<Image> image = new ArrayList<>();
+    private List<Image> imageList = new ArrayList<>();
 
 
     public Blog(String title, String content) {
@@ -38,20 +38,20 @@ public class Blog {
     public Blog() {
     }
 
-    public Date getPub() {
-        return pub;
+    public Date getPubDate() {
+        return pubDate;
     }
 
-    public void setPub(Date pub) {
-        this.pub = pub;
+    public void setPubDate(Date pubDate) {
+        this.pubDate = pubDate;
     }
 
-    public int getBlogId() {
-        return blogId;
+    public int getId() {
+        return id;
     }
 
-    public void setBlogId(int blogId) {
-        this.blogId = blogId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -78,11 +78,11 @@ public class Blog {
         this.user = user;
     }
 
-    public List<Image> getImage() {
-        return image;
+    public List<Image> getImageList() {
+        return imageList;
     }
 
-    public void setImage(List<Image> image) {
-        this.image = image;
+    public void setImageList(List<Image> imageList) {
+        this.imageList = imageList;
     }
 }
