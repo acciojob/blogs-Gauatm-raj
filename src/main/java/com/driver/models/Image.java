@@ -22,8 +22,7 @@ public class Image {
     public Image() {
     }
 
-    public Image(int imageId, String description, String dimensions) {
-        this.imageId = imageId;
+    public Image(String description, String dimensions) {
         this.description = description;
         this.dimensions = dimensions;
 

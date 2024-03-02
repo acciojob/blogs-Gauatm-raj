@@ -18,12 +18,14 @@ public class ImageService {
     public Image addImage(Integer blogId, String description, String dimensions){
         //add an image to the blog
         Blog blog=blogRepository2.findById(blogId).orElse(null);
-        Image image=new Image();
-        image.setDescription(description);
-        image.setDimensions(dimensions);
+        Image image=new Image(description,dimensions);
 
-        if(blog!=null)
-         image=imageRepository2.save(image);
+        if(blog==null)
+         return null;
+
+        blog.getImage().add(image);
+        image.setBlog(blog);
+        image=imageRepository2.save(image);
 
         return image;
 
@@ -38,8 +40,10 @@ public class ImageService {
         Image image=imageRepository2.findById(id).orElse(null);
         String dimension="";
         int ct=0;
-        if(image!=null)
-            dimension= image.getDimensions();
+        if(image==null)
+            return 0;
+
+        dimension= image.getDimensions();
 
         int total= Integer.parseInt(dimension);
         int div=Integer.parseInt(screenDimensions);

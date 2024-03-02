@@ -1,10 +1,10 @@
 package com.driver.models;
 
-import com.driver.models.Image;
-import com.driver.models.User;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -17,6 +17,8 @@ public class Blog {
     private String title;
     private String content;
 
+    private Date pub;
+
     @JoinColumn
     @ManyToOne
     @JsonIgnore
@@ -27,14 +29,21 @@ public class Blog {
     private List<Image> image = new ArrayList<>();
 
 
-    public Blog(int blogId, String title, String content) {
-        this.blogId = blogId;
+    public Blog(String title, String content) {
         this.title = title;
         this.content = content;
 
     }
 
     public Blog() {
+    }
+
+    public Date getPub() {
+        return pub;
+    }
+
+    public void setPub(Date pub) {
+        this.pub = pub;
     }
 
     public int getBlogId() {
