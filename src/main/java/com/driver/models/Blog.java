@@ -13,20 +13,20 @@ public class Blog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String title;
-    private String content;
+     int id;
+    String title;
+    String content;
 
-    private Date pubDate;
+     Date pubDate;
 
     @JoinColumn
     @ManyToOne
     @JsonIgnore
-    private User user;
+     User user;
 
 
     @OneToMany(mappedBy = "blog" , cascade = CascadeType.ALL)
-    private List<Image> imageList = new ArrayList<>();
+   List<Image> imageList = new ArrayList<>();
 
 
     public Blog(String title, String content) {

@@ -11,13 +11,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String username;
-    private String password;
+    int id;
+    String username;
+    String password;
 
 
     @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL)
-    private List<Blog> blogList = new ArrayList<>();
+    List<Blog> blogList = new ArrayList<>();
 
     public User(String username, String password) {
         this.username = username;

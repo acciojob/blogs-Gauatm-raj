@@ -10,14 +10,14 @@ public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String description;
+     int id;
+    String description;
 
-    private String dimensions;
+     String dimensions;
 
 
     @ManyToOne
-    private Blog blog;
+    Blog blog;
 
     public Image() {
     }
